@@ -1,0 +1,34 @@
+table {
+  margin: auto;
+  color: white (2, 2, 2);
+  border-radius: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.nini{
+  background-color: rgb(94, 255, 19);
+  border: 5px;
+  padding: 2px 7px 2px 7px;
+  border-radius: 10px;
+  color: rgb(15, 11, 13);
+}
+th {
+  background-color: aqua;
+  border: 20px;
+  padding: 2px 7px 2px 7px;
+  border-radius: 10px;
+  color: rgb(15, 11, 13);
+}
+th:hover {
+  background-color: #076380;
+  cursor: auto;
+}
+td {
+  background-color: rgb(183, 16, 183);
+  border: rgb(17, 4, 4);
+  border-color: black;
+  border-radius: 8px;
+}
+td:hover {
+    background-color: #d841ba;
+    cursor: auto;
+  }

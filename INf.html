@@ -1,0 +1,49 @@
+<nav className="mb-8">
+    <ul className="flex justify-center space-x-4">
+      {tabs.map((tab) => (
+        <li key={tab.id}>
+          <button
+            onClick={() => setActiveTab(tab.id)}
+            className={`px-4 py-2 rounded-full transition-colors ${
+              activeTab === tab.id
+                ? 'bg-[#96f1f4] text-[#000f26]'
+                : 'bg-transparent text-[#96f1f4] hover:bg-[#96f1f4] hover:bg-opacity-20'
+            }`}
+          >
+            {tab.label}
+          </button>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <motion.div
+    key={activeTab}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="max-w-3xl mx-auto"
+  >
+    <h2 className="text-[#96f1f4] text-3xl font-semibold mb-6">
+      {tabs.find((tab) => tab.id === activeTab)?.label}
+    </h2>
+    <ul className="space-y-4">
+      {content[activeTab].map((item, index) => (
+        <motion.li
+          key={index}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="flex items-center space-x-4"
+        >
+          <div className="w-2 h-2 bg-[#96f1f4] rounded-full"></div>
+          <span>{item}</span>
+        </motion.li>
+      ))}
+    </ul>
+  </motion.div>
+
+  <footer className="mt-16 text-center text-sm opacity-70">
+    <p>© 2023 Tecnicatura en Informática. Todos los derechos reservados.</p>
+  </footer>
+</div>
